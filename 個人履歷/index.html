@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>何昱陞 Eason Ho | 個人簡歷 Resume - AI 應用開發 × 數位資訊組織 × 數據與內容整合</title>
+  <meta name="description" content="何昱陞的個人面試簡歷網站。世新大學資訊傳播學系，專注於 AI 落地應用、本地 RAG 知識庫搭建、Java Spring Boot 後端開發與跨領域數位內容整合。">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Print Specific Styles for Interviewers */
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #0f172a !important;
+        font-size: 11pt !important;
+      }
+      .no-print, nav, #quick-filter, #toast, #portfolio-modal {
+        display: none !important;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+      .card-print {
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+        margin-bottom: 12px !important;
+      }
+      a {
+        text-decoration: none !important;
+        color: #0f172a !important;
+      }
+    }
+
+    /* Subtle custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans transition-colors duration-300 antialiased selection:bg-blue-500 selection:text-white">
+
+  <!-- ================= TOP NAV BAR ================= -->
+  <header class="sticky top-0 z-40 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 transition-colors">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 group">
+        <div class="w-9 h-9 rounded-lg bg-blue-600 text-white font-bold flex items-center justify-center shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
+          何
+        </div>
+        <div>
+          <span class="font-bold text-slate-900 dark:text-white tracking-tight text-lg">何昱陞</span>
+          <span class="text-xs text-slate-500 dark:text-slate-400 block -mt-1 font-medium">Eason Ho · 世新資傳</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">個人簡述</a>
+        <a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">核心技能</a>
+        <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">精選專案</a>
+        <a href="#experience" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">經歷與榮譽</a>
+        <a href="#education" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">學歷與特質</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2.5">
+        <!-- Print Button -->
+        <button onclick="window.print()" title="列印或存為 PDF" class="no-print inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4H7v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+          <span class="hidden sm:inline">匯出 PDF / 列印</span>
+        </button>
+
+        <!-- Dark Mode Toggle -->
+        <button id="theme-toggle" type="button" aria-label="切換深淺模式" class="p-2 rounded-lg text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          <!-- Sun icon (for dark mode) -->
+          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          <!-- Moon icon (for light mode) -->
+          <svg id="theme-toggle-dark-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12 sm:space-y-16">
+
+    <!-- ================= HERO & INTRO SECTION ================= -->
+    <section id="about" class="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-sm transition-all hover:shadow-md card-print">
+      <div class="flex flex-col-reverse lg:flex-row items-center justify-between gap-8 sm:gap-12">
+        
+        <!-- Bio Information -->
+        <div class="flex-1 space-y-5 text-center lg:text-left">
+          
+          <!-- Status Pill -->
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-400 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            積極尋找實習機會 · 隨時可面談上工
+          </div>
+
+          <!-- Main Name & Title -->
+          <div class="space-y-2">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
+              何昱陞 <span class="text-xl sm:text-2xl font-semibold text-slate-400 dark:text-slate-500 font-normal">Eason Ho</span>
+            </h1>
+            
+            <!-- Target Flexible Title requested by User -->
+            <div class="pt-1">
+              <p class="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-600 bg-clip-text text-transparent">
+                尋找實習機會｜AI 應用開發 × 數位資訊組織 × 數據與內容整合
+              </p>
+            </div>
+          </div>
+
+          <!-- Brief Elevator Pitch -->
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+            我是世新大學資訊傳播學系四年級的何昱陞，專注於 <strong class="text-slate-900 dark:text-white font-semibold">AI 落地應用、私有化 RAG 知識庫建置、Java Spring Boot 後端開發與數據分析</strong>。在畢業製作《沐光棲所》中擔任核心 <strong class="text-blue-600 dark:text-blue-400 font-semibold">AI 訓練師</strong>，主導對話邏輯、Prompt 工程、SOUL.md 記憶模組與語音 API 串接。
+          </p>
+
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+            憑藉資訊傳播學系的「技術實作 + 傳播敘事」跨領域優勢，我能精準弭平<strong class="text-slate-800 dark:text-slate-200">「工程架構端」</strong>與<strong class="text-slate-800 dark:text-slate-200">「數位內容營運端」</strong>的認知差距，既能撰寫程式與搭建資料庫，亦擅長透過數據分析與生成式 AI 工具提升組織產製效率。
+          </p>
+
+          <!-- Contact & Quick Actions -->
+          <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+            
+            <!-- Email (with copy) -->
+            <button onclick="copyEmail()" class="group inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white dark:bg-blue-600 dark:hover:bg-blue-500 text-xs sm:text-sm font-semibold transition-all shadow-sm">
+              <svg class="w-4 h-4 text-slate-300 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span>hoeason0731@gmail.com</span>
+              <span class="text-[10px] bg-white/20 px-1.5 py-0.5 rounded opacity-80 group-hover:opacity-100">點擊複製</span>
+            </button>
+
+            <!-- Phone -->
+            <a href="tel:0905863186" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-semibold border border-slate-200 dark:border-slate-700 transition-all">
+              <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <span>0905-863-186</span>
+            </a>
+
+            <!-- Portfolio Modal Button -->
+            <button onclick="openModal()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 dark:bg-blue-950/50 dark:hover:bg-blue-900/50 text-blue-700 dark:text-blue-300 text-xs sm:text-sm font-semibold border border-blue-200 dark:border-blue-800 transition-all">
+              <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
+              <span>查看作品集 QR Code</span>
+            </button>
+
+            <!-- Location -->
+            <span class="inline-flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 py-1">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              臺北市中山區
+            </span>
+
+          </div>
+
+        </div>
+
+        <!-- Headshot Profile Image -->
+        <div class="relative shrink-0 group">
+          <div class="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-blue-600 to-cyan-500 opacity-30 group-hover:opacity-60 blur-lg transition duration-500"></div>
+          <div class="relative w-44 h-56 sm:w-52 sm:h-64 rounded-2xl overflow-hidden shadow-xl border-4 border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-800">
+            <img src="assets/avatar.jpg" alt="何昱陞 Eason Ho" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-slate-900/90 dark:bg-slate-800/90 text-white backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-medium tracking-wide shadow-md whitespace-nowrap border border-slate-700">
+            世新資傳 · 大四
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= INTERVIEWER PERSPECTIVE FILTER ================= -->
+    <!-- 面試官專用快捷視角切換器 -->
+    <section id="quick-filter" class="no-print bg-gradient-to-r from-blue-900/10 via-indigo-900/10 to-slate-900/10 dark:from-blue-950/40 dark:via-indigo-950/30 dark:to-slate-900/40 p-4 sm:p-5 rounded-2xl border border-blue-200/80 dark:border-blue-900/50 space-y-3">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <span class="flex h-3 w-3 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-600"></span>
+          </span>
+          <h2 class="text-sm font-bold text-slate-800 dark:text-slate-100 tracking-wide uppercase">
+            ⚡ 面試官視角切換（針對目標企業快速聚焦）
+          </h2>
+        </div>
+        <p class="text-xs text-slate-500 dark:text-slate-400">點擊按鈕，頁面將自動高亮企業最看重的核心能力與專案</p>
+      </div>
+
+      <div class="flex flex-wrap gap-2.5 pt-1">
+        <!-- Button: All -->
+        <button onclick="filterPerspective('all')" id="filter-btn-all" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-sm bg-blue-600 text-white border border-blue-600">
+          🌟 全方位視角 (完整履歷)
+        </button>
+
+        <!-- Button: Tech & Knowledge -->
+        <button onclick="filterPerspective('tech')" id="filter-btn-tech" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-blue-400">
+          💻 資訊科技與知識服務（神通資訊、飛資得）
+        </button>
+
+        <!-- Button: Media & Marketing -->
+        <button onclick="filterPerspective('media')" id="filter-btn-media" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-sm bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-blue-400">
+          🎬 新媒體串流與整合行銷（三立電視、DAZN、傳揚）
+        </button>
+      </div>
+
+      <!-- Context Note Box -->
+      <div id="filter-hint" class="text-xs text-slate-600 dark:text-slate-300 bg-white/70 dark:bg-slate-900/60 p-2.5 rounded-lg border border-slate-200/60 dark:border-slate-800">
+        目前為<strong>完整綜觀模式</strong>：展示個人完整的 AI 訓練師、RAG 知識庫、全端架構、數據分析與影音競賽全方位能力。
+      </div>
+    </section>
+
+    <!-- ================= 3 CORE VALUE PROPOSITIONS ================= -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      
+      <!-- Card 1 -->
+      <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-blue-400 dark:hover:border-blue-500 transition-all card-print">
+        <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold mb-4">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">生成式 AI 與落地訓練</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          具備《沐光棲所》實戰 AI 訓練師歷練，精通 Prompt Engineering、對話邏輯樹、SOUL.md 記憶架構與語音 API 串接，能設計安全防護圍欄（Guardrails）。
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-indigo-400 dark:hover:border-indigo-500 transition-all card-print">
+        <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold mb-4">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1.5 3 3.5 3h9c2 0 3.5-1 3.5-3V7c0-2-1.5-3-3.5-3h-9C5.5 4 4 5 4 7zm0 4h16M4 14h16"/></svg>
+        </div>
+        <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">私有化 RAG 與資訊架構</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          實作本地檢索增強生成（RAG），掌握文件分塊、向量檢索與知識庫搭建；兼具 Java Spring Boot 與 PostgreSQL 全端開發能力，深入理解資料組織邏輯。
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-emerald-400 dark:hover:border-emerald-500 transition-all card-print">
+        <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold mb-4">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2">數據洞察與數位影音行銷</h3>
+        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          善用 Colab、Flourish 進行資料分析與視覺化，榮獲全國 SDGs × AI 短影音競賽佳作，具備敏捷跨團隊溝通協作與高品質內容產製實戰經驗。
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ================= MODULAR FEATURED PROJECTS ================= -->
+    <section id="projects" class="space-y-6">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-4">
+        <div>
+          <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest">Selected Works & Projects</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">精選專案與實作成果</h2>
+        </div>
+        <p class="text-xs text-slate-500 dark:text-slate-400">模組化卡片展示 · 支援現場快速檢索重點</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Project 1: 畢業專題《沐光棲所》AI夥伴專案 -->
+        <article class="project-card target-tech target-media bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-7 shadow-sm hover:shadow-md transition-all flex flex-col justify-between card-print">
+          <div class="space-y-4">
+            <!-- Header Badges -->
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300">
+                世新大四畢業製作
+              </span>
+              <span class="text-xs font-semibold text-slate-400 dark:text-slate-500">2024 - 2025</span>
+            </div>
+
+            <!-- Title & Role -->
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">
+                《沐光棲所》AI 智能伴侶系統
+              </h3>
+              <p class="text-xs sm:text-sm font-semibold text-blue-600 dark:text-blue-400 mt-1 flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                核心角色：AI 訓練師 (AI Trainer) & 系統對話架構師
+              </p>
+            </div>
+
+            <!-- Detailed Points with STAR Framework -->
+            <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-2.5 leading-relaxed">
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>對話邏輯與 Prompt 工程</strong>：主導 AI 伴侶的角色性格塑造與 System Prompt 精準調校，設計多輪分支對話邏輯樹，大幅提高陪伴回應的同理心與自然流暢度。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>SOUL.md 記憶架構規劃</strong>：規劃模組化人格記憶檔案（SOUL.md），使 AI 能保留使用者過往偏好、情感狀態與重要事件，打造連貫的長期記憶體驗。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>安全防護測試 (Guardrails)</strong>：實施越獄防護（Jailbreak Defense）與敏感詞邊界壓力測試，確保模型在各類極端問答情境下符合倫理與安全準則。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>語音 API 串接與原型落地</strong>：整合外部語音辨識（STT）與語音合成（TTS）API，成功產出互動式原型，並有效推動技術、設計與劇本跨領域團隊協作。</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tags -->
+          <div class="pt-6 border-t border-slate-100 dark:border-slate-800/80 mt-5">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Prompt Engineering</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">SOUL.md 記憶架構</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">語音 API 串接</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">模型安全測試</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">跨領域專案協作</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: 本地 RAG 知識庫搭建與資訊檢索實作 -->
+        <article class="project-card target-tech bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-7 shadow-sm hover:shadow-md transition-all flex flex-col justify-between card-print">
+          <div class="space-y-4">
+            <!-- Header Badges -->
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-indigo-100 text-indigo-800 dark:bg-indigo-900/50 dark:text-indigo-300">
+                資訊技術 / 知識服務核心實作
+              </span>
+              <span class="text-xs font-semibold text-slate-400 dark:text-slate-500">2024</span>
+            </div>
+
+            <!-- Title & Role -->
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                本地私有化 RAG 知識庫搭建與檢索
+              </h3>
+              <p class="text-xs sm:text-sm font-semibold text-indigo-600 dark:text-indigo-400 mt-1 flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                核心技術：Python · 檢索增強生成 (RAG) · 資訊組織
+              </p>
+            </div>
+
+            <!-- Detailed Points -->
+            <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-2.5 leading-relaxed">
+              <li class="flex items-start gap-2">
+                <span class="text-indigo-500 font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>解決公有模型幻覺與隱私</strong>：針對企業與機構對於特定領域專業文檔的保密需求，在本地端環境實作 RAG 知識庫架構，杜絕數據外洩疑慮。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-indigo-500 font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>文檔解析與資訊結構化分塊</strong>：運用 Python 進行多格式非結構化文檔（PDF、Word、Markdown）前處理，規劃合適的語意分塊（Chunking Strategy）與 Metadata 標記。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-indigo-500 font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>向量嵌入與精準語意檢索</strong>：實踐 Embedding 向量資料庫儲存與相似度比對（Similarity Search），確保生成回答皆有依據可循，支援文獻查證溯源。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-indigo-500 font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>對標產業價值</strong>：契合<strong>飛資得</strong>之知識庫組織與<strong>神通資訊</strong>之現代企業知識管理、智能客服知識後台需求。</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tags -->
+          <div class="pt-6 border-t border-slate-100 dark:border-slate-800/80 mt-5">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Python</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">RAG 知識庫</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">向量檢索 (Vector Search)</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">資訊組織架構</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">數據前處理</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: 全端資料庫串接系統 (Spring Boot × PostgreSQL) -->
+        <article class="project-card target-tech bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-7 shadow-sm hover:shadow-md transition-all flex flex-col justify-between card-print">
+          <div class="space-y-4">
+            <!-- Header Badges -->
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-300">
+                後端工程與系統整合
+              </span>
+              <span class="text-xs font-semibold text-slate-400 dark:text-slate-500">2024</span>
+            </div>
+
+            <!-- Title & Role -->
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                Spring Boot × PostgreSQL 後端系統實作
+              </h3>
+              <p class="text-xs sm:text-sm font-semibold text-amber-600 dark:text-amber-400 mt-1 flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+                核心技術：Java · Spring Boot · PostgreSQL · SQL
+              </p>
+            </div>
+
+            <!-- Detailed Points -->
+            <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-2.5 leading-relaxed">
+              <li class="flex items-start gap-2">
+                <span class="text-amber-500 font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>後端服務架構</strong>：使用企業級 Java Spring Boot 框架搭建 RESTful API，落實 Controller-Service-Repository 分層架構，確保程式碼具備高內聚力與可擴展性。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-500 font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>資料庫正規化與關聯設計</strong>：以 PostgreSQL 為核心，落實資料表正規化設計（3NF）、關聯約束與索引規劃，確保資料一致性與高效率查詢。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-500 font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>CRUD 與業務邏輯測試</strong>：撰寫完整資料增刪查改 API，處理 HTTP 例外與資料驗證，奠定紮實的軟體工程與資料庫實務基礎。</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tags -->
+          <div class="pt-6 border-t border-slate-100 dark:border-slate-800/80 mt-5">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Java</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Spring Boot</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">PostgreSQL</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">SQL 優化</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">RESTful APIs</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: SDGs × AI 數位影音創作與公共政策提案 -->
+        <article class="project-card target-media bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-7 shadow-sm hover:shadow-md transition-all flex flex-col justify-between card-print">
+          <div class="space-y-4">
+            <!-- Header Badges -->
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <span class="px-2.5 py-1 rounded-md text-xs font-bold bg-rose-100 text-rose-800 dark:bg-rose-900/50 dark:text-rose-300">
+                新媒體串流 / 行銷競賽獲獎
+              </span>
+              <span class="text-xs font-semibold text-slate-400 dark:text-slate-500">2025</span>
+            </div>
+
+            <!-- Title & Role -->
+            <div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                SDGs × AI 數位短影音創作與公共政策提案
+              </h3>
+              <p class="text-xs sm:text-sm font-semibold text-rose-600 dark:text-rose-400 mt-1 flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                核心技術：生成式 AI 應用 · 影音剪輯 (CapCut) · 數據視覺化
+              </p>
+            </div>
+
+            <!-- Detailed Points -->
+            <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-2.5 leading-relaxed">
+              <li class="flex items-start gap-2">
+                <span class="text-rose-500 font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>競賽肯定</strong>：榮獲<strong>「2025 全國大專校院 SDGs × AI 短影音競賽【佳作】」</strong>及《臺北市政府青年局 114 年度公共政策創意提案競賽》參加肯定。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rose-500 font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>生成式 AI 賦能工作流</strong>：運用 Claude、ChatGPT、Gemini 等多款 AI 工具進行腳本分鏡生成與文案潤飾，搭配 CapCut 實現高效率的影音後製。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rose-500 font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>數據圖表驅動內容傳播</strong>：結合 Google Sheets、Colab 與 <strong>Flourish</strong> 進行動態數據視覺化，將龐雜政策與永續指標轉化為易讀吸睛的社群影音圖表。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rose-500 font-bold shrink-0 mt-0.5">•</span>
+                <span><strong>對標產業價值</strong>：高度符合<strong>三立電視、DAZN 體育網、傳揚行銷</strong>所看重的數位內容產製節奏、社群受眾敏銳度與多媒體敘事能力。</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tags -->
+          <div class="pt-6 border-t border-slate-100 dark:border-slate-800/80 mt-5">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">全國短影音佳作</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">CapCut 剪輯</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">GenAI 工作流</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Flourish 視覺化</span>
+              <span class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">公共政策提案</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ================= SKILLS MATRIX SECTION ================= -->
+    <section id="skills" class="space-y-6">
+      
+      <div class="border-b border-slate-200 dark:border-slate-800 pb-4">
+        <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest">Competency & Toolsets</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">專業技能矩陣</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Skill Group 1 -->
+        <div class="skill-group target-tech target-media bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm card-print">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/60 text-blue-600 dark:text-blue-300 flex items-center justify-center font-bold text-xs">
+              AI
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm">生成式 AI 與 LLM 應用</h3>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">日常熟練工具與架構實戰</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">ChatGPT</span>
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">Claude</span>
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">Gemini</span>
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">NotebookLM</span>
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">Grok</span>
+            <span class="px-2 py-1 bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-xs rounded-md font-semibold border border-blue-200 dark:border-blue-900">Prompt Engineering</span>
+            <span class="px-2 py-1 bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-xs rounded-md font-semibold border border-blue-200 dark:border-blue-900">SOUL.md 架構</span>
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">語音 API 串接</span>
+          </div>
+        </div>
+
+        <!-- Skill Group 2 -->
+        <div class="skill-group target-tech bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm card-print">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/60 text-indigo-600 dark:text-indigo-300 flex items-center justify-center font-bold text-xs">
+              DEV
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm">程式開發與後端架構</h3>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">邏輯實作與後端整合</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-1 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 text-xs rounded-md font-semibold border border-indigo-200 dark:border-indigo-900">Python</span>
+            <span class="px-2 py-1 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 text-xs rounded-md font-semibold border border-indigo-200 dark:border-indigo-900">Java</span>
+            <span class="px-2 py-1 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 text-xs rounded-md font-semibold border border-indigo-200 dark:border-indigo-900">Spring Boot</span>
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">PostgreSQL</span>
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">SQL 查詢設計</span>
+            <span class="px-2 py-1 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 text-xs rounded-md font-semibold border border-indigo-200 dark:border-indigo-900">本地 RAG 架構</span>
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">HTML5 / CSS3</span>
+          </div>
+        </div>
+
+        <!-- Skill Group 3 -->
+        <div class="skill-group target-tech target-media bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm card-print">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/60 text-emerald-600 dark:text-emerald-300 flex items-center justify-center font-bold text-xs">
+              DATA
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm">數據分析與視覺化</h3>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">資料萃取、清理與可視化</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">Google Colab</span>
+            <span class="px-2 py-1 bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs rounded-md font-semibold border border-emerald-200 dark:border-emerald-900">Flourish 動態圖表</span>
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">Excel 數據整理</span>
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">Google Sheets</span>
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">Google Forms 問卷</span>
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">資訊組織與分類</span>
+          </div>
+        </div>
+
+        <!-- Skill Group 4 -->
+        <div class="skill-group target-media bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm card-print">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-rose-100 dark:bg-rose-900/60 text-rose-600 dark:text-rose-300 flex items-center justify-center font-bold text-xs">
+              MEDIA
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm">數位影音與傳播協作</h3>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">內容剪輯、傳播與軟實力</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-1 bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 text-xs rounded-md font-semibold border border-rose-200 dark:border-rose-900">CapCut 剪輯</span>
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">AI 短影音產製</span>
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">數位敘事與腳本發想</span>
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">跨專業團隊協作</span>
+            <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs rounded-md font-medium">主動求知與自我驅動</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE & AWARDS ================= -->
+    <section id="experience" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Work & Extracurricular Experience -->
+      <div class="space-y-5">
+        <div class="border-b border-slate-200 dark:border-slate-800 pb-3">
+          <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest">Experience</span>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white mt-0.5">實務工作與社團經歷</h2>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Item 1: 浪花科技 -->
+          <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm card-print">
+            <div class="flex justify-between items-start gap-2">
+              <div>
+                <h3 class="font-bold text-slate-900 dark:text-white text-base">浪花科技 (Wave Tech)</h3>
+                <p class="text-xs font-semibold text-blue-600 dark:text-blue-400">工讀生 / 助理</p>
+              </div>
+              <span class="text-xs text-slate-400 dark:text-slate-500 font-medium">工作歷練</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2.5 leading-relaxed">
+              參與日常專案支援、資料整理分類與跨部門溝通，在實務環境中建立嚴謹細膩的工作習慣與團隊協作能力，並深入體會科技專案落地之實務運作流程。
+            </p>
+          </div>
+
+          <!-- Item 2: 社團經歷 -->
+          <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm card-print">
+            <div class="flex justify-between items-start gap-2">
+              <div>
+                <h3 class="font-bold text-slate-900 dark:text-white text-base">世新大學校園社團</h3>
+                <p class="text-xs font-semibold text-slate-600 dark:text-slate-400">桌球社、園藝社 社員</p>
+              </div>
+              <span class="text-xs text-slate-400 dark:text-slate-500 font-medium">課外發展</span>
+            </div>
+            <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2.5 space-y-1.5 leading-relaxed">
+              <li>• <strong>桌球社</strong>：培養快速專注的臨場反應力、抗壓性以及與夥伴並肩競技的團隊合作精神。</li>
+              <li>• <strong>園藝社</strong>：沉澱心境，磨練長期耐心觀察、細心維護與按部就班解決問題的態度。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Competitions & Honors -->
+      <div class="space-y-5">
+        <div class="border-b border-slate-200 dark:border-slate-800 pb-3">
+          <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest">Awards & Certifications</span>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white mt-0.5">參賽榮譽與外語證照</h2>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Award 1 -->
+          <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm card-print">
+            <div class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+                🏆
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">2025 全國大專校院 SDGs × AI 短影音競賽</h3>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-300">佳作</span>
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">主辦：全國各大專校院聯合主辦 (2025)</p>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+                  以生成式 AI 結合 CapCut 產製兼具政策深意與社群傳播力的高品質短影音作品，在全國眾多團隊中脫穎而出獲獎。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Award 2 -->
+          <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm card-print">
+            <div class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+                🎖️
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">臺北市政府青年局 114 年度公共政策創意提案競賽</h3>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">參加獎</span>
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">主辦：臺北市政府青年局 (2025)</p>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5">
+                  深入探討青年公共事務，結合數據收集與創新思維提出政策改善方案，具備對社會議題與公眾需求的洞察力。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certification 1 -->
+          <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm card-print">
+            <div class="flex items-start gap-3">
+              <div class="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                🌐
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">TOEIC 多益英語測驗</h3>
+                  <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300">560 分</span>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
+                  具備閱讀英文官方技術文件（API Docs、GitHub Repo、開發指南）與日常職場英語溝通能力。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= EDUCATION & INTERESTS ================= -->
+    <section id="education" class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-sm card-print">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Education Detail -->
+        <div class="space-y-3">
+          <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest">Education</span>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">學歷背景</h2>
+          
+          <div class="pt-2">
+            <h3 class="text-lg font-bold text-slate-800 dark:text-slate-100">世新大學 (Shih Hsin University)</h3>
+            <p class="text-sm font-semibold text-blue-600 dark:text-blue-400">資訊傳播學系四年級 · 學士學位在學</p>
+            <p class="text-xs text-slate-400 dark:text-slate-500 mt-0.5">2021 年 9 月 – 2025 年 6 月（預計畢業）</p>
+            
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+              <strong>學門特色</strong>：融合「資訊科學」與「傳播媒體」跨領域訓練，兼備程式系統開發邏輯、資料庫架構、資訊組織分類與多媒體內容傳播企劃之雙向思維。
+            </p>
+          </div>
+        </div>
+
+        <!-- Personal Traits & Interests -->
+        <div class="space-y-3">
+          <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest">Personal Traits & Life</span>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">個人特質與生活熱情</h2>
+          
+          <div class="pt-2 space-y-3">
+            <div>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                我熱愛新興科技與知識整理，對 AI 的好奇心驅使我不斷將新工具融入日常工作流。在團隊中是兼具條理與同理心的溝通協調者。
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 pt-1">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-200">
+                🏓 喜愛桌球（敏銳反應與團隊競賽）
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-200">
+                🌱 園藝觀察（耐心細緻與持續灌溉）
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-200">
+                🎧 音樂探索（專注靈感與沉澱思維）
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-200">
+                🚶 城市走訪與生活觀察
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= BOTTOM CONTACT CALLOUT ================= -->
+    <section class="no-print bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-8 sm:p-10 text-white text-center space-y-5 shadow-lg">
+      <div class="max-w-2xl mx-auto space-y-2">
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">準備好為您的團隊注入 AI 與數據整合能量！</h2>
+        <p class="text-blue-100 text-xs sm:text-sm">
+          無論是<strong>資訊科技與知識服務（神通資訊、飛資得）</strong>或是<strong>新媒體串流與整合行銷（三立電視、DAZN、傳揚）</strong>，我都帶著滿滿的熱忱與實作能力隨時準備面談！
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+        <a href="mailto:hoeason0731@gmail.com" class="px-5 py-2.5 rounded-xl bg-white text-blue-700 hover:bg-blue-50 font-bold text-sm shadow transition-all">
+          發送信件聯繫我
+        </a>
+        <a href="tel:0905863186" class="px-5 py-2.5 rounded-xl bg-blue-800/80 hover:bg-blue-800 text-white font-bold text-sm border border-blue-400/40 transition-all">
+          撥打手機 0905-863-186
+        </a>
+        <button onclick="openModal()" class="px-5 py-2.5 rounded-xl bg-blue-900/60 hover:bg-blue-900 text-white font-semibold text-sm border border-blue-400/30 transition-all">
+          掃描作品集 QR Code
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-400 dark:text-slate-500 space-y-2">
+    <p>© 2025 何昱陞 Eason Ho · 世新大學資訊傳播學系. Hosted on GitHub Pages.</p>
+    <p class="no-print">本網頁支援響應式手機瀏覽與 Ctrl+P 匯出列印排版</p>
+  </footer>
+
+  <!-- ================= PORTFOLIO QR CODE MODAL ================= -->
+  <div id="portfolio-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 max-w-sm w-full shadow-2xl space-y-4 text-center transform transition-all">
+      <div class="flex justify-between items-center pb-2 border-b border-slate-100 dark:border-slate-800">
+        <h3 class="text-base font-bold text-slate-900 dark:text-white">何昱陞 · 作品集 QR Code</h3>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="p-3 bg-white rounded-2xl border border-slate-200 inline-block shadow-inner mx-auto">
+        <img src="assets/portfolio_qr.png" alt="個人作品集 QR Code" class="w-48 h-48 object-contain">
+      </div>
+
+      <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+        可使用手機相機直接掃描上方 QR Code，立即查閱何昱陞的精選作品集完整專案與展示文件。
+      </p>
+
+      <div class="pt-2">
+        <button onclick="closeModal()" class="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold transition-colors">
+          關閉視窗
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= TOAST NOTIFICATION ================= -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900 text-white dark:bg-blue-600 px-4 py-2.5 rounded-xl shadow-xl flex items-center gap-2 text-xs font-semibold">
+    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+    <span id="toast-message">Email 已成功複製到剪貼簿！</span>
+  </div>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    // Theme toggle logic (Default to system or dark/light)
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+    // Init theme
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+      themeToggleDarkIcon.classList.add('hidden');
+    } else {
+      document.documentElement.classList.remove('dark');
+      themeToggleLightIcon.classList.add('hidden');
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+
+    // Copy Email Toast
+    function copyEmail() {
+      const email = 'hoeason0731@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        showToast('Email (hoeason0731@gmail.com) 已成功複製！');
+      }).catch(() => {
+        showToast('請複製：hoeason0731@gmail.com');
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.textContent = msg;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 2500);
+    }
+
+    // Modal logic
+    function openModal() {
+      document.getElementById('portfolio-modal').classList.remove('hidden');
+    }
+    function closeModal() {
+      document.getElementById('portfolio-modal').classList.add('hidden');
+    }
+
+    // Quick Interviewer Perspective Filter
+    function filterPerspective(type) {
+      // Buttons state
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(b => {
+        b.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
+        b.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300', 'border-slate-200', 'dark:border-slate-700');
+      });
+
+      const activeBtn = document.getElementById(`filter-btn-${type}`);
+      activeBtn.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
+      activeBtn.classList.remove('bg-white', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+
+      const projectCards = document.querySelectorAll('.project-card');
+      const skillGroups = document.querySelectorAll('.skill-group');
+      const hint = document.getElementById('filter-hint');
+
+      if (type === 'all') {
+        hint.innerHTML = '目前為<strong>完整綜觀模式</strong>：展示個人完整的 AI 訓練師、RAG 知識庫、全端架構、數據分析與影音競賽全方位能力。';
+        projectCards.forEach(c => {
+          c.style.opacity = '1';
+          c.classList.remove('ring-2', 'ring-blue-500');
+        });
+        skillGroups.forEach(s => {
+          s.style.opacity = '1';
+          s.classList.remove('ring-2', 'ring-blue-500');
+        });
+      } else if (type === 'tech') {
+        hint.innerHTML = '🚀 已切換至<strong>【資訊科技與知識服務】視角（神通資訊科技、飛資得）</strong>：已重點高亮 <strong>Python、Java Spring Boot、SQL、本地 RAG 知識庫與資訊組織架構</strong>。';
+        projectCards.forEach(c => {
+          if (c.classList.contains('target-tech')) {
+            c.style.opacity = '1';
+            c.classList.add('ring-2', 'ring-blue-500');
+          } else {
+            c.style.opacity = '0.35';
+            c.classList.remove('ring-2', 'ring-blue-500');
+          }
+        });
+        skillGroups.forEach(s => {
+          if (s.classList.contains('target-tech')) {
+            s.style.opacity = '1';
+            s.classList.add('ring-2', 'ring-blue-500');
+          } else {
+            s.style.opacity = '0.35';
+            s.classList.remove('ring-2', 'ring-blue-500');
+          }
+        });
+      } else if (type === 'media') {
+        hint.innerHTML = '🎬 已切換至<strong>【新媒體串流與整合行銷】視角（三立電視、DAZN、傳揚）</strong>：已重點高亮 <strong>生成式 AI 影音產製、CapCut、Prompt 提示工程、Flourish 數據視覺化與跨團隊協作</strong>。';
+        projectCards.forEach(c => {
+          if (c.classList.contains('target-media')) {
+            c.style.opacity = '1';
+            c.classList.add('ring-2', 'ring-blue-500');
+          } else {
+            c.style.opacity = '0.35';
+            c.classList.remove('ring-2', 'ring-blue-500');
+          }
+        });
+        skillGroups.forEach(s => {
+          if (s.classList.contains('target-media')) {
+            s.style.opacity = '1';
+            s.classList.add('ring-2', 'ring-blue-500');
+          } else {
+            s.style.opacity = '0.35';
+            s.classList.remove('ring-2', 'ring-blue-500');
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>
